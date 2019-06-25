@@ -3,6 +3,18 @@ import React, { Component } from 'react';
 export default  class Resume extends Component {
   render() {
     let resumeData = this.props.resumeData;
+    console.log(this.props.resumeData)
+    /*if(this.props.resumeData){
+      var skills = this.props.resumeData.skills.map(function(skills){
+        var projectImage = 'images/tech/'+skills.image;
+          return <div key={skills.name} className="columns feature-item">
+                    <img className='skill' alt={skills.name} src={projectImage} />
+                    <h5>{skills.name}</h5>
+                    <p>{skills.description}</p>
+                 </div>
+        })
+    }*/
+
     return (
       <section id="resume">
          <div className="row education">
@@ -57,35 +69,26 @@ export default  class Resume extends Component {
             </div>
          </div>
 
-
          <div className="row skill">
 
-            <div className="three columns header-col">
-               <h1><span>Skills</span></h1>
-            </div>
+        <div className="three columns header-col">
+           <h1><span>Favorite Tech</span></h1>
+        </div>
 
-            <div className="nine columns main-col">
-
-               <p>
-               {resumeData.skillsDescription}
-               </p>
-
-   				<div>
-   				   <ul>
-                {
-                  resumeData.skills && resumeData.skills.map((item) => {
-                    return(
-                      <li>
-                      <em>{item.skillname}</em>
-                      </li>
-                    )
-                  })
-                }
-   					</ul>
-
-   				</div>
-   			</div>
-         </div>
+        <div>
+          <div className="nine columns main-col"><p className="lead center">{resumeData.skillsDescription}</p></div>
+          <ul className="bgrid-quarters s-bgrid-thirds cf">
+           {resumeData.skills && resumeData.skills.map(function(skills){
+             var projectImage = 'images/tech/'+skills.image;
+               return <div key={skills.name} className="columns feature-item">
+                         <img className='skill' alt={skills.name} src={projectImage} />
+                         <h5>{skills.name}</h5>
+                         <p>{skills.description}</p>
+                      </div>
+             })}
+          </ul>
+       </div>
+     </div>
       </section>
     );
   }

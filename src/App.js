@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import $ from 'jquery'
+import $ from 'jquery';
+import './App.css';
 import Header from './components/Header';
 import About from './components/About';
 import Resume from './components/Resume';
@@ -12,22 +13,21 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      foo: 'bar',
       resumeData: {}
     };
-
-    //ReactGA.initialize('UA-110570651-1');
-    //ReactGA.pageview(window.location.pathname);
-
   }
 
   getResumeData(){
+    const load = document.getElementById('siteLoading')
     $.ajax({
       url:'https://alpha-dog-9ce25.firebaseio.com/.json',
       dataType:'json',
       cache: false,
       success: function(data){
         this.setState({resumeData: data});
+        setTimeout(()=>{
+          load.outerHTML='';
+        },500)
       }.bind(this),
       error: function(xhr, status, err){
         console.log(err);
@@ -41,6 +41,7 @@ class App extends Component {
   }
 
   render() {
+    //console.log(this.state.resumeData)
     return (
       <div className="App">
         <Header resumeData={this.state.resumeData}/>
