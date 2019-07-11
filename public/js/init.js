@@ -146,13 +146,15 @@
       var contactSubject = $('#contactForm #contactSubject').val();
       var contactMessage = $('#contactForm #contactMessage').val();
 
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
+      var data = {
+        content:"Subject: "+contactSubject+'\n'+"Contact email: "+contactEmail+'\n'+"Message: "+contactMessage,
+        subject:"Contact from "+contactName
+      };
 
       $.ajax({
 
 	      type: "POST",
-	      url: "inc/sendEmail.php",
+	      url: "https://us-central1-alpha-dog-9ce25.cloudfunctions.net/sendEmail",
 	      data: data,
 	      success: function(msg) {
 
@@ -161,7 +163,7 @@
                $('#image-loader').fadeOut();
                $('#message-warning').hide();
                $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
+               $('#message-success').fadeIn();
             }
             // There was an error
             else {
@@ -178,11 +180,3 @@
 
 
 });
-
-
-
-
-
-
-
-

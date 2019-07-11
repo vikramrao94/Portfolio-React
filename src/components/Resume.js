@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default  class Resume extends Component {
   render() {
     let resumeData = this.props.resumeData;
-    console.log(this.props.resumeData)
+    //console.log(this.props.resumeData)
     /*if(this.props.resumeData){
       var skills = this.props.resumeData.skills.map(function(skills){
         var projectImage = 'images/tech/'+skills.image;

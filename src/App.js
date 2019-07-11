@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import ReactGA from 'react-ga';
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
@@ -15,6 +16,8 @@ class App extends Component {
     this.state = {
       resumeData: {}
     };
+    ReactGA.initialize('UA-143688469-1');
+    ReactGA.pageview(window.location.pathname);
   }
 
   getResumeData(){
