@@ -79,7 +79,7 @@ export default  class Resume extends Component {
           <div className="nine columns main-col"><p className="lead center">{resumeData.skillsDescription}</p></div>
           <ul className="bgrid-quarters s-bgrid-thirds cf">
            {resumeData.skills && resumeData.skills.map(function(skills){
-             var projectImage = 'images/tech/'+skills.image;
+             var projectImage = `https://firebasestorage.googleapis.com/v0/b/alpha-dog-9ce25.appspot.com/o/images%2Fskills%2F${encodeURIComponent(skills.image)}?alt=media`;
                return <div key={skills.name} className="columns feature-item">
                          <img className='skill' alt={skills.name} src={projectImage} />
                          <h5>{skills.name}</h5>

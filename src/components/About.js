@@ -7,7 +7,7 @@ export default class About extends Component {
     const profilePic = () => {
       return(
         <div className="three columns">
-           <img className="profile-pic"  src="images/profilepic.jpg" alt="" />
+           <img className="profile-pic"  src="https://firebasestorage.googleapis.com/v0/b/alpha-dog-9ce25.appspot.com/o/images%2Fprofilepic.jpg?alt=media" alt="" />
         </div>
       );
     }
