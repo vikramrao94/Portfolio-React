@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import ReactGA from 'react-ga';
+import {Helmet} from "react-helmet";
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
@@ -47,6 +48,11 @@ class App extends Component {
     //console.log(this.state.resumeData)
     return (
       <div className="App">
+        <Helmet>
+              <meta charSet="utf-8" />
+              <meta name="description" content="My portfolio and resume." />
+              <meta name="keywords" cpntent="software engineer, software developer, full-stack, machine leanring, AI" />
+        </Helmet>
         <Header resumeData={this.state.resumeData}/>
         <About resumeData={this.state.resumeData}/>
         <Resume resumeData={this.state.resumeData}/>

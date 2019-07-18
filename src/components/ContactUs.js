@@ -49,7 +49,7 @@ export default class ContactUs extends Component {
             </div>
             <div className="ten columns">
               <p className="lead">
-              Feel free to contact me for any work or suggestions below
+              Feel free to contact me for any work oppertunities
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default class ContactUs extends Component {
             <div className="eight columns">
               {contactForm()}
               <span id="image-loader">
-                       <img alt="" src="images/loader.gif" />
+                       <img alt="" src="https://firebasestorage.googleapis.com/v0/b/alpha-dog-9ce25.appspot.com/o/images%2Floader.gif?alt=media" />
                 </span>
 
                 <span id="message-success">
